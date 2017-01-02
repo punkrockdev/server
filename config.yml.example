@@ -1,0 +1,6 @@
+---
+unattended_upgrades__auto_reboot: True
+unattended_upgrades__auto_reboot_time: "03:40"
+# release upgrades needed on Ubuntu
+# - see https://github.com/debops/ansible-unattended_upgrades/issues/14
+unattended_upgrades__release: True
