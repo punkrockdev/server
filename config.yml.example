@@ -1,4 +1,18 @@
 ---
+---
+# pick components
+#################
+
+install_notebook: false
+
+# component settings
+####################
+
+notebook:
+  path: '{{ ansible_env.HOME }}/notebook'
+  recreate_venv: false # set to true after an OS upgrade if necessary
+
+# unattended upgrades
 unattended_upgrades__auto_reboot: True
 unattended_upgrades__auto_reboot_time: "03:40"
 # release upgrades needed on Ubuntu

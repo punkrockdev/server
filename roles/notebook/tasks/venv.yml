@@ -1,0 +1,7 @@
+- name: pip | delete old venv
+  file: path={{ notebook.path }}/venv/ state=absent
+  when: notebook.recreate_venv
+
+- name: virtualenv | create virtualenv
+  shell: /usr/bin/python3 -m venv "{{ notebook.path }}/venv"
+         creates="{{ notebook.path }}/venv/bin/python"

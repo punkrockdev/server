@@ -1,6 +1,6 @@
 # Server
 
-Ansible playbook for setting up and maintaining a server.
+Ansible playbook making your server practically maintain itself 🛠
 
 Features:
 
@@ -15,8 +15,8 @@ TODO:
 
 Install [Ansible](http://docs.ansible.com/).
 
-Prepare your hosts file (add your servers) and the config file (override any
-defaults):
+Prepare your hosts file (add your servers) and the config file (optionally
+override defaults):
 
     cp hosts.example hosts
     cp config.yml.example config.yml

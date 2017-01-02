@@ -1,0 +1,7 @@
+---
+- name: pip | copy requirements.txt
+  copy: src=requirements.txt dest="{{ notebook.path }}/requirements.txt"
+
+- name: pip | install python packages
+  pip: requirements="{{ notebook.path }}/requirements.txt"
+       virtualenv="{{ notebook.path }}/venv/"
