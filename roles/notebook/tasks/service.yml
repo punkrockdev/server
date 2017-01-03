@@ -1,0 +1,12 @@
+- name: service | copy service file
+  template:
+    src=jupyter.service
+    dest=/etc/systemd/system/jupyter.service
+    owner=root
+    group=root
+    mode='0644'
+
+- name: service | enable and restart
+  service:
+    name: jupyter.service
+    state: restarted

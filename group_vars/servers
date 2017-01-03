@@ -1,0 +1,14 @@
+---
+# pick components
+#################
+
+# you can override these settings by creating individual host files,
+# e.g. host_vars/server-alias matching a server alias from your hosts file
+
+install_notebook: false
+
+# component settings
+####################
+
+# default password which you should override: donthackme
+notebook_password: sha1:acdae1abad61:13eb47b316838cc8a0a4278b71f9971f626503e8

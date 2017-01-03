@@ -1,9 +1,6 @@
 ---
 ---
-# pick components
-#################
 
-install_notebook: false
 
 # component settings
 ####################

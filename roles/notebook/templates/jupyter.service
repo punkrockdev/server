@@ -1,0 +1,15 @@
+[Unit]
+Description=Jupyter Notebook
+
+[Service]
+Type=simple
+PIDFile=/run/jupyter.pid
+ExecStart={{ notebook.path }}/venv/bin/jupyter-notebook
+User=root
+Group=root
+WorkingDirectory={{ ansible_env.HOME }}
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

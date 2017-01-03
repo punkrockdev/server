@@ -8,4 +8,4 @@
     - config.yml
   roles:
     - { role: debops.unattended_upgrades, tags: ["unattended_upgrades"]}
-    - { role: notebook, when: install_notebook }
+    - { role: notebook, when: install_notebook, tags: ["notebook"] }

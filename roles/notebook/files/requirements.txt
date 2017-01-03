@@ -1,1 +1,8 @@
 jupyter[notebook]
+
+# additional common scientific packages
+requests
+pandas
+xlrd
+openpyxl
+beautifulsoup4

@@ -1,13 +1,16 @@
 ---
 - include: apt.yml
   tags:
-    - notebook
     - apt
 - include: venv.yml
   tags:
-    - notebook
     - pip
 - include: pip.yml
   tags:
-    - notebook
     - pip
+- include: config.yml
+  tags:
+    - config
+- include: service.yml
+  tags:
+    - service
