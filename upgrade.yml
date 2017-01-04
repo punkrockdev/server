@@ -1,0 +1,10 @@
+---
+# Apply OS upgrades and reboot the VMs
+- hosts: servers
+  become: yes
+  become_user: root
+  become_method: sudo
+  vars_files:
+    - config.yml
+  roles:
+    - upgrade

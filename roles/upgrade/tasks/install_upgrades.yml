@@ -1,0 +1,16 @@
+---
+# source: https://github.com/tchapi/ansible-playbooks/blob/master/roles/upgrade/tasks/main.yml
+
+- name: update apt
+  apt: update_cache=yes
+- name: upgrade apt
+  apt: upgrade=full
+- name: make a general dist-upgrade
+  register: upgrade
+  apt: upgrade=dist
+- name: do-release-upgrade
+  command: /usr/bin/do-release-upgrade -f DistUpgradeViewNonInteractive
+  async: 7200 # give it 2 h max
+  poll: 10 # poll completion every 10 s
+  when: (upgrade|success)
+  register: release_upgrade

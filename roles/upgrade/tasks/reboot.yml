@@ -1,0 +1,9 @@
+---
+# source: https://realguess.net/2014/12/21/ansible-update-servers-to-the-latest-and-reboot/
+- name: check_reboot | Check if a reboot is required
+  when: upgrade and release_upgrade
+  register: file
+  stat: path=/var/run/reboot-required get_md5=no
+- name: reboot | Reboot the server
+  command: /sbin/reboot
+  when: file.stat.exists == true
