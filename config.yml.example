@@ -1,12 +1,11 @@
 ---
----
-
 
 # component settings
 ####################
 
 notebook:
   path: '{{ ansible_env.HOME }}/notebook'
+  notebook_dir: '{{ ansible_env.HOME }}/notebook/data'
   recreate_venv: false # set to true after an OS upgrade if necessary
 
 # unattended upgrades
