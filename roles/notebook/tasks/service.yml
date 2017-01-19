@@ -8,5 +8,6 @@
 
 - name: service | enable and restart
   service:
-    name: jupyter.service
-    state: restarted
+    name=jupyter.service
+    enabled=yes
+    state=started
