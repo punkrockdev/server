@@ -5,4 +5,7 @@ requests
 pandas
 xlrd
 openpyxl
+matplotlib
 beautifulsoup4
+python-Levenshtein
+fuzzywuzzy
