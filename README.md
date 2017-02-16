@@ -12,24 +12,37 @@ Features:
 
 ## Usage
 
-Install [Ansible](http://docs.ansible.com/).
+Install [Ansible](http://docs.ansible.com/). An easy way if you have Python locally:
 
-Prepare your hosts file (add your servers) and the config file (optionally
-change these global defaults):
+    pip install ansible
+
+Prepare your *hosts* file by adding your servers
+and prepare the *config.yml* file where you can optionally
+change the global defaults:
 
     cp hosts.example hosts
     cp config.yml.example config.yml
 
-Make sure you can ssh into the added servers using only your ssh
-public key (no password) first - `ssh-copy-id user@host` otherwise.
+Make sure:
+
+ - you can ssh into the added servers using only your ssh
+   public key (no password) first. You can push your public key to the server using:
+   
+        ssh-copy-id user@host
+       
+ - the user you ssh as to the servers is on the sudoers list
+ - you satisfy other Ansible managed node requirements, which is basically Python 2.
+   On recent Ubuntu VMs on Digital Ocean, you might have to install it:
+   
+        apt-get install python-minimal
 
 There are additional settings in *group_vars/servers* which can be overriden.
 
-Test that you can access the servers
+Test that you can access the servers:
 
     ansible -m ping all
 
-Finally to run the playbooks execute
+**Finally to run the playbooks execute:**
 
     ansible-playbook server.yml
 
