@@ -209,8 +209,8 @@ c.NotebookApp.open_browser = False
 #  The string should be of the form type:salt:hashed-password.
 {% if notebook_password %}
 c.NotebookApp.password = '{{ notebook_password }}'
-{% else %}
-#c.NotebookApp.password = ''
+{% else %} # default password: donthackme
+c.NotebookApp.password = 'sha1:d88452b18fd9:735e6a786d17709a131198f0c0edf217eadc55bf'
 {% endif %}
 
 ## The port the notebook server will listen on.

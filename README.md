@@ -30,13 +30,13 @@ Make sure:
 
  - you can ssh into the added servers using only your ssh
    public key (no password) first. You can push your public key to the server using:
-   
+
         ssh-copy-id user@host
-       
+
  - the user you ssh as to the servers is on the sudoers list
  - you satisfy other Ansible managed node requirements, which is basically Python 2.
    On recent Ubuntu VMs on Digital Ocean, you might have to install it:
-   
+
         apt-get install python-minimal
 
 There are additional settings in *group_vars/servers* which can be overriden.
@@ -76,22 +76,25 @@ Example config:
     ---
     install_notebook: True
 
-    notebook_password: sha1:67c9e60bb8b6:9ffede0825894254b2e042ea597d771089e11aed
+    notebook_password: 'sha1:d88452b18fd9:735e6a786d17709a131198f0c0edf217eadc55bf'
 
-You can generate the password locally:
+If you don't set the password (you should!) the default is *donthackme*.
+Once you run the *server.yml* playbook,
+Jupyter notebook should be running on port 8888.
+
+You can use the default password to connect to the notebook and generate
+a new password hash from within a notebook if you haven't already:
 
     In [1]: from notebook.auth import passwd
 
     In [2]: passwd()
     Enter password:
     Verify password:
-    Out[2]: 'sha1:67c9e60bb8b6:9ffede0825894254b2e042ea597d771089e11aed'
+    Out[2]: 'sha1:d88452b18fd9:735e6a786d17709a131198f0c0edf217eadc55bf'
 
-More info on generating the password and setting up a TLS certificate
+You then set this hash in your host file and rerun the playbook.
+More info on generating the password and optionally setting up a TLS certificate
 [in the documentation][jupyter-security].
-
-Once you run the *server.yml* playbook,
-Jupyter notebook should be running on port 8888.
 
 [unattended-upgrades]: https://github.com/debops/ansible-unattended_upgrades
 [jupyter]: http://jupyter.org/
