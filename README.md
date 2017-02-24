@@ -9,6 +9,9 @@ Features:
 - one-command OS distribution upgrades - 14.04 → 16.04 → … 🏗
 - [Jupyter notebook][jupyter] (optional) – analyse all the things 📈
 
+The playbook should generally work on Debian / Ubuntu servers, but it was mostly
+tested on Ubuntu 16.04.
+
 
 ## Usage
 
@@ -59,6 +62,10 @@ available as a separate playbook that you run as:
 
     ansible-playbook upgrade.yml
 
+Note that depending on what packages you have installed, you might have to
+ssh to the server once the process completes to finish some manual steps
+(mostly choosing what to do with config files that were edited).
+
 ### Jupyter notebook
 
 To install the optional [Jupyter notebook][jupyter] either enable it in
@@ -71,8 +78,20 @@ Example config:
 
     notebook_password: sha1:67c9e60bb8b6:9ffede0825894254b2e042ea597d771089e11aed
 
+You can generate the password locally:
+
+    In [1]: from notebook.auth import passwd
+
+    In [2]: passwd()
+    Enter password:
+    Verify password:
+    Out[2]: 'sha1:67c9e60bb8b6:9ffede0825894254b2e042ea597d771089e11aed'
+
 More info on generating the password and setting up a TLS certificate
 [in the documentation][jupyter-security].
+
+Once you run the *server.yml* playbook,
+Jupyter notebook should be running on port 8888.
 
 [unattended-upgrades]: https://github.com/debops/ansible-unattended_upgrades
 [jupyter]: http://jupyter.org/

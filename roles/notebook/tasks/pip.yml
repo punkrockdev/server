@@ -2,6 +2,9 @@
 - name: pip | copy requirements.txt
   copy: src=requirements.txt dest="{{ notebook.path }}/requirements.txt"
 
+- name: pip | ensure latest pip
+  pip: name="pip" virtualenv="{{ notebook.path }}/venv/" state="latest"
+
 - name: pip | install python packages
   pip: requirements="{{ notebook.path }}/requirements.txt"
-       virtualenv="{{ notebook.path }}/venv/"
+       virtualenv="{{ notebook.path }}/venv/" state="latest"

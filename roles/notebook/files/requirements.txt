@@ -1,4 +1,4 @@
-jupyter[notebook]
+jupyter
 
 # additional common scientific packages
 requests

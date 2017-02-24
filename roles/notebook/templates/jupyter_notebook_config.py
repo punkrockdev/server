@@ -207,7 +207,11 @@ c.NotebookApp.open_browser = False
 #    from notebook.auth import passwd; passwd()
 #
 #  The string should be of the form type:salt:hashed-password.
+{% if notebook_password %}
 c.NotebookApp.password = '{{ notebook_password }}'
+{% else %}
+#c.NotebookApp.password = ''
+{% endif %}
 
 ## The port the notebook server will listen on.
 #c.NotebookApp.port = 8888

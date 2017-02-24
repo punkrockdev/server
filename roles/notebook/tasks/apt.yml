@@ -2,6 +2,21 @@
 - name: apt | install notebook packages
   apt: name={{ item }} state=present update_cache=true
   with_items:
+    # mainly for the native dependencies
+    - python-matplotlib
+    - python-scipy
+    # actually needed
     - python3
     - python3-pip
+
+- name: apt | install the venv package if there
+  apt: name={{ item }} state=present
+  with_items:
     - python3-venv
+  ignore_errors: yes
+
+- name: apt | install the 3.4 venv package if there # for Ubuntu 14.04
+  apt: name={{ item }} state=present
+  with_items:
+    - python3.4-venv
+  ignore_errors: yes

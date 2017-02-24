@@ -3,6 +3,8 @@
 
 - name: update apt
   apt: update_cache=yes
+- name: apt | install aptitude
+  apt: name=aptitude state=present update_cache=false
 - name: upgrade apt
   apt: upgrade=full
 - name: make a general dist-upgrade
