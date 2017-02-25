@@ -11,6 +11,9 @@
 - include: config.yml
   tags:
     - config
+- include: widgets.yml
+  tags:
+    - config
 - include: service.yml
   tags:
     - service
