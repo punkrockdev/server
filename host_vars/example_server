@@ -1,0 +1,14 @@
+---
+# individual server settings
+# you can override group or other variables here
+
+install_notebook: True
+notebook_password: 'sha1:your:actualpasswordhash'
+
+
+# you can override some of the unattended upgrades variables too. See full list:
+# https://docs.debops.org/en/latest/ansible/roles/ansible-unattended_upgrades/docs/defaults.html
+
+unattended_upgrades__auto_reboot: True
+unattended_upgrades__auto_reboot_time: "04:30"
+unattended_upgrades__remove_unused: True

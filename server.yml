@@ -1,5 +1,16 @@
 ---
-# Apply OS upgrades and reboot the VMs
+# deploy the server configuration
+
+- name: dependency provisioning
+  hosts: all
+  become: yes
+  become_user: root
+  become_method: sudo
+  gather_facts: false
+  tasks:
+    - name: install python2
+      raw: sudo apt-get -y install python-simplejson
+
 - hosts: servers
   become: yes
   become_user: root

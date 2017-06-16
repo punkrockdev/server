@@ -33,13 +33,12 @@ Make sure:
 
         ssh-copy-id user@host
 
- - the user you ssh as to the servers is on the sudoers list
- - you satisfy other Ansible managed node requirements, which is basically Python 2.
-   On recent Ubuntu VMs on Digital Ocean, you might have to install it:
+ - the user you ssh as into the servers is on the sudoers list
 
-        apt-get install python-minimal
-
-There are additional settings in *group_vars/servers* which can be overriden.
+There are additional settings in *group_vars/servers* which can be overriden
+for all the servers. Also, you can override settings for individual servers
+if you create a file in the *host_vars* folder
+(filename must match the server alias from the *hosts* file).
 
 Test that you can access the servers:
 
