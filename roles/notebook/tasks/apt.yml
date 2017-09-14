@@ -15,7 +15,7 @@
     - python3-venv
   ignore_errors: yes
 
-- name: apt | install the 3.4 venv package if there # for Ubuntu 14.04
+- name: apt | try installing the 3.4 venv package if available (Ubuntu 14.04)
   apt: name={{ item }} state=present
   with_items:
     - python3.4-venv

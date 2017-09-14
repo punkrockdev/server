@@ -1,0 +1,13 @@
+---
+- include: venv.yml
+  tags:
+    - pip
+- include: pip.yml
+  tags:
+    - pip
+- include: config.yml
+  tags:
+    - config
+- include: widgets.yml
+  tags:
+    - config

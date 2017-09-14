@@ -3,13 +3,13 @@ Description=Jupyter Notebook
 
 [Service]
 Type=simple
-PIDFile=/run/jupyter.pid
-ExecStart={{ notebook.path }}/venv/bin/jupyter-notebook
-User=root
-Group=root
-WorkingDirectory={{ ansible_env.HOME }}
+PIDFile={{ notebook.home }}/jupyter.pid
+ExecStart="{{ notebook.home }}/start_jupyter.sh"
+User={{ notebook.user }}
+Group={{ notebook.group }}
+WorkingDirectory={{ notebook.home }}
 Restart=always
-RestartSec=10
+RestartSec=30
 
 [Install]
 WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+---
+- name: config | create notebook directory
+  file: path={{ notebook.notebook_dir }} state=directory
+
+- name: config | create .jupyter directory
+  file: path={{ notebook.home }}/.jupyter state=directory
+
+- name: config | copy config file
+  template:
+    src=jupyter_notebook_config.py
+    dest={{ notebook.home }}/.jupyter/jupyter_notebook_config.py
+
+- name: config | copy start script
+  template:
+    src=start_jupyter.sh
+    dest={{ notebook.home }}/start_jupyter.sh
+    mode='0755'

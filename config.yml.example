@@ -3,9 +3,14 @@
 # component settings
 ####################
 
+notebook_user: jupyter
+notebook_user_home: /home/{{ notebook_user }}
 notebook:
-  path: '{{ ansible_env.HOME }}/notebook'
-  notebook_dir: '{{ ansible_env.HOME }}/notebook/data'
+  home: '{{ notebook_user_home }}'
+  path: '{{ notebook_user_home }}/notebook'
+  notebook_dir: '{{ notebook_user_home }}/notebook/data'
+  user: '{{ notebook_user }}'
+  group: '{{ notebook_user }}'
   recreate_venv: false # set to true after an OS upgrade if necessary
 
 # unattended upgrades

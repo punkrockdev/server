@@ -1,6 +1,6 @@
 *.retry
 
-hosts
-config.yml
+/hosts
+/config.yml
 host_vars/*
 !host_vars/example_server

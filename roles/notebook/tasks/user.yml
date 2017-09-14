@@ -1,0 +1,6 @@
+---
+  - name: create a user jupyter
+    user:
+      name: '{{ notebook.user }}'
+      comment: "{{ notebook.user }}"
+      createhome: yes

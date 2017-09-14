@@ -48,6 +48,10 @@ Test that you can access the servers:
 
     ansible-playbook server.yml
 
+Or if you can't remember the command, run:
+
+    ./server.sh
+
 
 ## Components
 

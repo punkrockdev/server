@@ -1,19 +1,14 @@
 ---
+- include: user.yml
+  tags:
+    - user
 - include: apt.yml
   tags:
     - apt
-- include: venv.yml
-  tags:
-    - pip
-- include: pip.yml
-  tags:
-    - pip
-- include: config.yml
-  tags:
-    - config
-- include: widgets.yml
-  tags:
-    - config
+- include: main_jupyter.yml
+  become: true
+  become_user: '{{ notebook.user }}'
 - include: service.yml
   tags:
     - service
+    - debug
