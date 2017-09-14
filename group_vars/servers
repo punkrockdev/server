@@ -6,9 +6,17 @@
 # e.g. host_vars/server-alias matching a server alias from your hosts file
 
 install_notebook: False
+enable_swap: False
 
 # component settings
 ####################
 
+# notebook
 # default password which you should override: donthackme
 notebook_password: sha1:acdae1abad61:13eb47b316838cc8a0a4278b71f9971f626503e8
+
+# swap
+swap_path: /{{ ansible_env.HOME }}/swapfile
+dd_bs_size_mb: 1
+swap_count: 2048
+swappiness: 10

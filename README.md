@@ -8,6 +8,7 @@ Features:
   your security patches ⛱
 - one-command OS distribution upgrades - 14.04 → 16.04 → … 🏗
 - [Jupyter notebook][jupyter] (optional) – analyse all the things 📈
+- enable swap (optional) – for when something obvious just isn't there 👍
 
 The playbook should generally work on Debian / Ubuntu servers, but it was mostly
 tested on Ubuntu 16.04.
@@ -98,6 +99,11 @@ a new password hash from within a notebook if you haven't already:
 You then set this hash in your host file and rerun the playbook.
 More info on generating the password and optionally setting up a TLS certificate
 [in the documentation][jupyter-security].
+
+### Enable swap
+
+Similar to the notebook, override the `enable_swap` setting in the server's
+config file.
 
 [unattended-upgrades]: https://github.com/debops/ansible-unattended_upgrades
 [jupyter]: http://jupyter.org/

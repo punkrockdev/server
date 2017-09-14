@@ -18,5 +18,6 @@
   vars_files:
     - config.yml
   roles:
+    - { role: nginx, tags: ["nginx"]}
     - { role: debops.unattended_upgrades, tags: ["unattended_upgrades"]}
     - { role: notebook, when: install_notebook, tags: ["notebook"] }
