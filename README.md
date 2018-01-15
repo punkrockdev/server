@@ -2,21 +2,22 @@
 
 Ansible playbook making your server practically maintain itself 🛠
 
-Features:
+## Features
 
-- [unattended package upgrades][unattended-upgrades] – relax, we got
-  your security patches ⛱
-- one-command OS distribution upgrades - 14.04 → 16.04 → … 🏗
-- [Jupyter notebook][jupyter] (optional) – analyse all the things 📈
-- enable swap (optional) – for when something obvious just isn't there 👍
+Use *server* to get these lovely features:
+
+- ⛱ [unattended package upgrades][unattended-upgrades] – relax, we got
+  your security patches
+- 🏗 one-command OS distribution upgrades - 14.04 → 16.04 → …
+- 📈 [Jupyter notebook][jupyter] (optional) – analyse all the things
+- 👍 enable swap (optional) – for when something obvious just isn't there
 
 The playbook should generally work on Debian / Ubuntu servers, but it was mostly
-tested on Ubuntu 16.04.
-
+tested in Ubuntu 16.04.
 
 ## Usage
 
-Install [Ansible](http://docs.ansible.com/). An easy way if you have Python locally:
+Install [Ansible](http://docs.ansible.com/). An easy way if you have Python locally is to run:
 
     pip install ansible
 
