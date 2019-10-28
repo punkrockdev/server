@@ -1,6 +1,6 @@
 # Server
 
-Ansible playbook making your server practically maintain itself 🛠
+*Ansible playbook for making your Ubuntu server practically maintain itself 🛠*
 
 ## Features
 
@@ -8,18 +8,19 @@ Use *server* to get these lovely features:
 
 - ⛱ [unattended package upgrades][unattended-upgrades] – relax, we got
   your security patches
-- 🏗 one-command OS distribution upgrades - 14.04 → 16.04 → …
+- 🏗 one-command OS distribution upgrades - 16.04 → 18.04 → …
 - 📈 [Jupyter notebook][jupyter] (optional) – analyse all the things
 - 👍 enable swap (optional) – for when something obvious just isn't there
 
-The playbook should generally work on Debian / Ubuntu servers, but it was mostly
-tested in Ubuntu 16.04.
-
 ## Usage
 
-Install [Ansible](http://docs.ansible.com/). An easy way if you have Python locally is to run:
+The playbook should generally work on Debian / Ubuntu servers, but it is mainly
+used with the latest Ubuntu LTS server release.
 
-    pip install ansible
+To run the playbook, install [Ansible](http://docs.ansible.com/) locally.
+An easy way to install it if you have Python locally is to run:
+
+    pip3 install ansible
 
 Prepare your *hosts* file by adding your servers
 and prepare the *config.yml* file where you can optionally

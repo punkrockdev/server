@@ -1,7 +1,7 @@
 ---
 - name: apt | install notebook packages
   apt: name={{ item }} state=present update_cache=true
-  with_items:
+  loop:
     # mainly for the native dependencies
     - python-matplotlib
     - python-scipy
@@ -11,12 +11,6 @@
 
 - name: apt | install the venv package if there
   apt: name={{ item }} state=present
-  with_items:
+  loop:
     - python3-venv
-  ignore_errors: yes
-
-- name: apt | try installing the 3.4 venv package if available (Ubuntu 14.04)
-  apt: name={{ item }} state=present
-  with_items:
-    - python3.4-venv
   ignore_errors: yes
